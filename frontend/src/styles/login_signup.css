@@ -1,0 +1,177 @@
+:root {
+  --main-green: #40C057;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  } to {
+    transform: rotate(360deg);
+  }
+}
+
+.login-form-container {
+  width: 54vh;
+  min-height: 52vh;
+  border-radius: 3vh;
+  box-shadow: rgba(63, 63, 63, 0.16) 0px 1px 8px;
+  background-color: white;
+  padding: 1vh;
+}
+
+.title-logo-div {
+  display: flex;
+  align-items: center;
+  column-gap: 1vh;
+}
+
+.title-logo-div span {
+  color: var(--main-green);
+  font-weight: 400;
+  font-size: 2em;
+}
+
+.logo {
+  width: 5vh;
+  /* animation: rotate 5s linear infinite; */
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5vh;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #e9ecef;
+}
+
+.create-account-span  {
+  color: var(--main-green);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.create-account-span:hover {
+  text-decoration: underline;
+  color: #37a331;
+}
+
+.account-span {
+  margin-top: 3vh;
+  font-size: 2.2vh;
+}
+
+.welcome-back-span {
+  font-size: 3.5vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5vh;
+  row-gap: 5vh;
+}
+
+.signup-form {
+  row-gap: 4.75vh;
+}
+
+.input-block {
+  display: flex;
+  align-items: baseline;
+  column-gap: 1.5vh;
+  width: 80%;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.input-block input {
+  border: none;
+  padding-bottom: 3px;
+  outline: none;
+  caret-color: black;
+  font-size: 1.85vh;
+  width: 100%;
+}
+
+.input-icon {
+  width: 2.5vh;
+  position: relative;
+  top: 2px;
+}
+
+.remember-me-container {
+  width: 80%;
+  font-size: 2vh;
+  display: flex;
+  column-gap: 0.75vh;
+}
+
+.remember-me-container input {
+  accent-color: var(--main-green);
+}
+
+.login-button {
+  background-color: var(--main-green);
+  border: none;
+  color: white;
+  width: 80%;
+  padding: 1.8vh;
+  font-size: 2.25vh;
+  border-radius: 3vh;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.login-button:hover {
+  background-color: #37a331;
+}
+
+.error-span {
+  color: rgb(234, 7, 7);
+  position: absolute;
+  font-size: 1.3vh;
+  bottom: -2.5vh;
+}
+
+input::-webkit-textfield-decoration-container {
+  visibility: hidden;
+}
+
+.password-visibility-icon {
+  width: 3vh;
+  opacity: 0.7;
+  position: absolute;
+  margin-top: 0.5vh;
+  right: 0.75vh;
+  cursor: pointer;
+}
+
+.password-visibility-icon:hover {
+  opacity: 0.5;
+}
+
+/*mobile*/
+
+@media only screen and (max-width: 800px) {
+  .login-form-container {
+    width: 40vh;
+    min-height: 32vh;
+  }
+
+  form {
+    row-gap: 4vh;
+  }
+
+  .login-button {
+     margin-bottom: 2vh;
+  }
+
+  .account-span {
+    margin-top: 1vh;
+  }
+}
