@@ -12,10 +12,12 @@ const app = express();
 app.use(express.json());
 const PORT = process.env.PORT;
 const DB_PASSWORD = process.env.DB_PASSWORD;
-app.use(cors({
-  origin: 'http://localhost:5173',  // Adjust to match your frontend URL
-  credentials: true
-}));
+const corsOptions = {
+  origin: process.env.NODE_ENV === 'production' ? 'https://your-heroku-app.herokuapp.com' : 'http://localhost:5173',
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 app.use(cookieParser());
 
