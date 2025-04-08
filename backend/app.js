@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT;
 const DB_PASSWORD = process.env.DB_PASSWORD;
 app.use(cors({
-  origin: 'https://67f59e05fe029187a44ef661--soft-capybara-638585.netlify.app',
+  origin: 'https://soft-capybara-638585.netlify.app',
   credentials: true
 }));
 
