@@ -16,6 +16,13 @@ app.use(cors({
   credentials: true
 }));
 
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173'); // Allow requests from your local server
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Allow these HTTP methods
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type'); // Allow content-type header
+  next(); // Pass to the next middleware or route
+});
+
 app.set('trust proxy', 1);
 
 app.use(express.json());
