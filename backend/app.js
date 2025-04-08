@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT;
 const DB_PASSWORD = process.env.DB_PASSWORD;
 app.use(cors({
-  origin: true,
+  origin: 'http://localhost:5173',
   credentials: true
 }));
 
