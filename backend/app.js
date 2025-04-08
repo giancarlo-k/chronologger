@@ -9,16 +9,14 @@ import cookieParser from "cookie-parser"
 
 dotenv.config({ path: '../.env' });
 const app = express();
-app.use(express.json());
 const PORT = process.env.PORT;
 const DB_PASSWORD = process.env.DB_PASSWORD;
-const corsOptions = {
-  origin: process.env.NODE_ENV === 'production' ? 'https://your-heroku-app.herokuapp.com' : 'http://localhost:5173',
-  credentials: true,
-};
+app.use(cors({
+  origin: 'http://localhost:5173',  
+  credentials: true
+}));
 
-app.use(cors(corsOptions));
-
+app.use(express.json());
 app.use(cookieParser());
 
 app.use(session({
