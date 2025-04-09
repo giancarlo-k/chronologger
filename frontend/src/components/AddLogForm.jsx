@@ -88,7 +88,7 @@ const AddLogForm = ({ handleIsLogFormActive, mode }) => {
       }
 
       if (mode === 'add') {
-        axios.post('http://localhost:5555/logs', formPayload, { withCredentials: true })
+        axios.post('https://chronologger-backend-0d366a44ea30.herokuapp.com/logs', formPayload, { withCredentials: true })
         .then(response => {
           console.log(response);
           window.location.href = '/dashboard';
@@ -97,7 +97,7 @@ const AddLogForm = ({ handleIsLogFormActive, mode }) => {
           console.log(error);
         })
       } else {
-        axios.put(`http://localhost:5555/logs/${logID}`, formPayload, { withCredentials: true })
+        axios.put(`https://chronologger-backend-0d366a44ea30.herokuapp.com/logs/${logID}`, formPayload, { withCredentials: true })
         .then(response => {
           window.location.href = `/log/${logID}`;
         })
