@@ -17,7 +17,7 @@ const LogsContent = ({ handleIsLogFormActive }) => {
   }
 
   useEffect(() => {
-    axios.get('http://localhost:5555/logs', { withCredentials: true })
+    axios.get('https://chronologger-backend-0d366a44ea30.herokuapp.com/logs', { withCredentials: true })
     .then(response => {
       console.log(response.data.logs);
       setLogs(response.data.logs);
