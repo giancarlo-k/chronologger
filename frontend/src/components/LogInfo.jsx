@@ -20,7 +20,7 @@ const LogInfo = ({ handleIsLogFormActive, handleIsLogTimeFormActive }) => {
   const [progressBarRadiuses, setProgressBarRadiuses] = useState('0');
 
   useEffect(() => {
-    axios.get(`http://localhost:5555/logs/${logID}`, { withCredentials: true })
+    axios.get(`https://chronologger-backend-0d366a44ea30.herokuapp.com/logs/${logID}`, { withCredentials: true })
     .then(response => {
       setLogInfo(response.data.log);
       const loggedTimes = response.data.log.loggedTimes;
@@ -92,7 +92,7 @@ const LogInfo = ({ handleIsLogFormActive, handleIsLogTimeFormActive }) => {
       reverseButtons: true
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:5555/logs/${logID}`, { withCredentials: true })
+        axios.delete(`https://chronologger-backend-0d366a44ea30.herokuapp.com/logs/${logID}`, { withCredentials: true })
         .then(response => {
           window.location.href = '/dashboard'
         })
