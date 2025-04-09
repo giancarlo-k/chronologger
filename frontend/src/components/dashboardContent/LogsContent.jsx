@@ -21,8 +21,8 @@ const LogsContent = ({ handleIsLogFormActive }) => {
     .then(response => {
       console.log(response.data.logs);
       setLogs(response.data.logs);
-      const loggedTimes = response.data.log.loggedTimes;
-      setLoggedTimes(loggedTimes);
+      // const loggedTimes = response.data.log.loggedTimes;
+      // setLoggedTimes(loggedTimes);
     })
     .catch(error => {
       console.log(error);
