@@ -40,7 +40,7 @@ const LogInfoSkeleton = () => {
 
     window.addEventListener('resize', checkMobileView)
 
-    axios.get('http://localhost:5555/users/auth/status', { withCredentials: true })
+    axios.get('https://chronologger-backend-0d366a44ea30.herokuapp.com/users/auth/status', { withCredentials: true })
       .then(response => {
         if (!response.data.authenticated) {
           window.location.href = '/';
