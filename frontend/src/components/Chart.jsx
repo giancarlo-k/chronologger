@@ -16,7 +16,7 @@ const Chart = () => {
   const [timeLogs, setTimeLogs] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:5555/logs/${logID}`, { withCredentials: true })
+    axios.get(`https://chronologger-backend-0d366a44ea30.herokuapp.com/logs/${logID}`, { withCredentials: true })
     .then(response => {
       console.log(response.data.log.loggedTimes);
       processLogs(response.data.log.loggedTimes)
