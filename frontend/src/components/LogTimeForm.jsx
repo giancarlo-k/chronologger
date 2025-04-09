@@ -78,7 +78,7 @@ const AddLogForm = ({ handleIsLogTimeFormActive }) => {
         // alert(formattedLoggedTime);
         // alert(loggedTimeTotal);
         
-      axios.post(`http://localhost:5555/logs/${logID}/times`, {  formattedLoggedTime, formattedDate, loggedTimeTotal, logID  }, { withCredentials: true })
+      axios.post(`https://chronologger-backend-0d366a44ea30.herokuapp.com/logs/${logID}/times`, {  formattedLoggedTime, formattedDate, loggedTimeTotal, logID  }, { withCredentials: true })
         .then(response => {
           // console.log(response);
           window.location.href = `/log/${logID}`;
