@@ -26,7 +26,10 @@ app.use(session({
   secret: "no_idea_what_this_does_lol_27$$", 
   resave: false,            
   saveUninitialized: false,  
-  cookie: { secure: false }   
+  cookie: {
+    secure: true,            // send only over HTTPS
+    sameSite: 'none'         // allow cross-origin requests
+  }   
 }));
 
 await mongoose.connect(`mongodb+srv://giancarlokite:${DB_PASSWORD}@mern-chronologger.iudfl.mongodb.net/?retryWrites=true&w=majority&appName=mern-chronologger`);
