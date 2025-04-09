@@ -37,7 +37,7 @@ const Dashboard = () => {
     const formData = new FormData();
     formData.append('image', S3Image)
 
-    axios.post(`http://localhost:5555/logs/uploadtos3`, formData, { withCredentials: true })
+    axios.post(`https://chronologger-backend-0d366a44ea30.herokuapp.com/logs/uploadtos3`, formData, { withCredentials: true })
       .then(response => {
         console.log(response)
       })
@@ -60,7 +60,7 @@ const Dashboard = () => {
 
     window.addEventListener('resize', checkMobileView)
 
-    axios.get('http://localhost:5555/users/auth/status', { withCredentials: true })
+    axios.get('https://chronologger-backend-0d366a44ea30.herokuapp.com/users/auth/status', { withCredentials: true })
       .then(response => {
         if (!response.data.authenticated) {
           window.location.href = '/';
