@@ -8,7 +8,7 @@ import ClockIcon from './ClockIcon.jsx';
 const Sidebar = () => {
 
   const handleLogout = async () => {
-    await axios.get('http://localhost:5555/users/logout', { withCredentials: true }) 
+    await axios.get('https://chronologger-backend-0d366a44ea30.herokuapp.com/users/logout', { withCredentials: true }) 
       .then(response => {
         if (response.status === 200) {
           window.location.href = '/';
