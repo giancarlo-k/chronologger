@@ -14,7 +14,7 @@ const Signup = () => {
   useEffect(() => {
     document.title = 'ChronoLogger | Create Account';
 
-    axios.get('http://localhost:5555/users/auth/status', { withCredentials: true })
+    axios.get('https://chronologger-backend-0d366a44ea30.herokuapp.com/users/auth/status', { withCredentials: true })
     .then(response => {
       if (response.data.authenticated) {
         window.location.href = '/dashboard';
@@ -51,7 +51,7 @@ const Signup = () => {
       setErrorMessage(prev => ({...prev, passwordsMatch: true }));
       setErrorMessage(prev => ({...prev, usernameTaken: false }));
       const { username, password } = formData
-      axios.post('http://localhost:5555/users/add', { username, password })
+      axios.post('https://chronologger-backend-0d366a44ea30.herokuapp.com/users/add', { username, password })
         .then(response => {
           window.location.href = '/dashboard';
         })
