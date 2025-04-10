@@ -16,6 +16,10 @@ app.use(cors({
   credentials: true
 }));
 
+app.options('*', cors({
+  origin: 'https://soft-capybara-638585.netlify.app',
+  credentials: true
+}));
 
 app.set('trust proxy', 1);
 
