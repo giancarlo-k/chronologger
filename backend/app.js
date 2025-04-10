@@ -11,6 +11,28 @@ dotenv.config({ path: '../.env' });
 const app = express();
 const PORT = process.env.PORT;
 const DB_PASSWORD = process.env.DB_PASSWORD;
+
+const allowedOrigins = ['https://soft-capybara-638585.netlify.app'];
+
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.header('Access-Control-Allow-Origin', origin);
+  }
+
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+
+  // Handle preflight requests
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
+
+  next();
+});
+
+
 app.use(cors({
   origin: 'https://soft-capybara-638585.netlify.app',
   credentials: true
