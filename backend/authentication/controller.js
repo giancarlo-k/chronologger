@@ -14,9 +14,9 @@ export const addUser = async (req, res) => {
   
     const newUser = await User.create({ username, password: await hash(plainPassword) });
   
-    return res.status(200).json(newUser);
-
     req.session.user = { username };
+    
+    return res.status(200).json(newUser);
 
   } catch (error) {
     console.log(error.message);
