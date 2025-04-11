@@ -16,6 +16,8 @@ export const addUser = async (req, res) => {
   
     return res.status(200).json(newUser);
 
+    req.session.user = { username };
+
   } catch (error) {
     console.log(error.message);
     return res.status(500).json({ message: error.message });
