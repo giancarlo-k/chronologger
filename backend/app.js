@@ -28,6 +28,7 @@ const store = new MongoDBStore({
 app.set('trust proxy', 1);
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(session({
   secret: "no_idea_what_this_does_lol_27$$", 
