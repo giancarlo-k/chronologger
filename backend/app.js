@@ -19,6 +19,10 @@ app.use(cors({
   credentials: true
 }));
 
+const store = new MongoDBStore({
+  uri: `mongodb+srv://giancarlokite:${DB_PASSWORD}@mern-chronologger.iudfl.mongodb.net/?retryWrites=true&w=majority&appName=mern-chronologger`,
+  collection: 'sessions',
+});
 
 app.set('trust proxy', 1);
 
