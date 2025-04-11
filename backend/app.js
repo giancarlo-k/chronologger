@@ -2,8 +2,8 @@ import express from "express";
 import session from "express-session";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import { route as authRoutes } from './authentication/routes.js'
-import { route as logRoutes } from './logs/routes.js'
+import { route as authRoutes } from './authentication/routes.js';
+import { route as logRoutes } from './logs/routes.js';
 import cors from 'cors';
 import cookieParser from "cookie-parser";
 
@@ -56,7 +56,7 @@ app.options('*', cors({
   credentials: true
 }));
 
-// Set up proxy
+// Set up proxy (to handle situations where reverse proxies are used)
 app.set('trust proxy', 1);
 
 // Middleware for JSON and cookie parsing
@@ -66,6 +66,9 @@ app.use(cookieParser());
 // Log session information
 app.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] Session Info:`, req.session);
+  if (req.cookies) {
+    console.log(`[${new Date().toISOString()}] Cookies:`, req.cookies);
+  }
   next();
 });
 
@@ -75,8 +78,8 @@ app.use(session({
   resave: false,            
   saveUninitialized: false,  
   cookie: {
-    secure: true,            // send only over HTTPS
-    sameSite: 'none'         // allow cross-origin requests
+    secure: process.env.NODE_ENV === 'production',  // Make sure cookies are secure in production (only sent over HTTPS)
+    sameSite: 'none',         // allow cross-origin requests
   }   
 }));
 
