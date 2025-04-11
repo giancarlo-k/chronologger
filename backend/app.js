@@ -6,6 +6,8 @@ import { route as authRoutes } from './authentication/routes.js'
 import { route as logRoutes } from './logs/routes.js'
 import cors from 'cors';
 import cookieParser from "cookie-parser"
+import connectMongo from 'connect-mongo';
+import { default as connectMongoDBSession } from 'connect-mongodb-session';
 
 dotenv.config({ path: '../.env' });
 const app = express();
