@@ -5,7 +5,6 @@ import mongoose from "mongoose";
 import { route as authRoutes } from './authentication/routes.js'
 import { route as logRoutes } from './logs/routes.js'
 import cors from 'cors';
-import cookieParser from "cookie-parser"
 import connectMongo from 'connect-mongo';
 import { default as connectMongoDBSession } from 'connect-mongodb-session';
 
@@ -19,6 +18,8 @@ app.use(cors({
   credentials: true
 }));
 
+const MongoDBStore = connectMongoDBSession(session);
+
 const store = new MongoDBStore({
   uri: `mongodb+srv://giancarlokite:${DB_PASSWORD}@mern-chronologger.iudfl.mongodb.net/?retryWrites=true&w=majority&appName=mern-chronologger`,
   collection: 'sessions',
@@ -27,17 +28,12 @@ const store = new MongoDBStore({
 app.set('trust proxy', 1);
 
 app.use(express.json());
-app.use(cookieParser());
 
 app.use(session({
   secret: "no_idea_what_this_does_lol_27$$", 
   resave: false,            
   saveUninitialized: false,  
-  cookie: {
-    secure: true,            
-    sameSite: 'none',
-    httpOnly: true
-  }   
+  store: store
 }));
 
 await mongoose.connect(`mongodb+srv://giancarlokite:${DB_PASSWORD}@mern-chronologger.iudfl.mongodb.net/?retryWrites=true&w=majority&appName=mern-chronologger`);
