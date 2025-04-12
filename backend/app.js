@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT;
 const DB_PASSWORD = process.env.DB_PASSWORD;
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: 'https://soft-capybara-638585.netlify.app/',
   credentials: true
 }));
 
