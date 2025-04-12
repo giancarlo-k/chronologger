@@ -5,38 +5,28 @@ import mongoose from "mongoose";
 import { route as authRoutes } from './authentication/routes.js'
 import { route as logRoutes } from './logs/routes.js'
 import cors from 'cors';
-import connectMongo from 'connect-mongo';
-import { default as connectMongoDBSession } from 'connect-mongodb-session';
+import cookieParser from "cookie-parser"
 
-// dotenv.config({ path: '../.env' });
+dotenv.config({ path: '../.env' });
 const app = express();
 const PORT = process.env.PORT;
 const DB_PASSWORD = process.env.DB_PASSWORD;
-
 app.use(cors({
-  origin: 'https://soft-capybara-638585.netlify.app',
+  origin: 'http://localhost:5173',
   credentials: true
 }));
 
-const MongoDBStore = connectMongoDBSession(session);
-
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-
-const store = new MongoDBStore({
-  uri: `mongodb+srv://giancarlokite:${DB_PASSWORD}@mern-chronologger.iudfl.mongodb.net/?retryWrites=true&w=majority&appName=mern-chronologger`,
-  collection: 'sessions',
-});
-
-app.set('trust proxy', 1);
-
+app.use(cookieParser());
 
 app.use(session({
   secret: "no_idea_what_this_does_lol_27$$", 
   resave: false,            
-  saveUninitialized: true,  
-  store: store
+  saveUninitialized: false,  
+  cookie: {
+    secure: true,            // send only over HTTPS
+    sameSite: 'none'         // allow cross-origin requests
+  }
 }));
 
 await mongoose.connect(`mongodb+srv://giancarlokite:${DB_PASSWORD}@mern-chronologger.iudfl.mongodb.net/?retryWrites=true&w=majority&appName=mern-chronologger`);
