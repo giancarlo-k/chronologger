@@ -11,23 +11,29 @@ dotenv.config({ path: '../.env' });
 const app = express();
 const PORT = process.env.PORT;
 const DB_PASSWORD = process.env.DB_PASSWORD;
-app.use(cors({
-  origin: 'https://soft-capybara-638585.netlify.app',
-  credentials: true
-}));
 
-app.use(express.json());
-app.use(cookieParser());
-
-app.use(session({
-  secret: "no_idea_what_this_does_lol_27$$", 
-  resave: false,            
-  saveUninitialized: false,  
-  cookie: {
-    secure: true,            // send only over HTTPS
-    sameSite: 'none'         // allow cross-origin requests
-  }
-}));
+pp.use(cors({
+   origin: 'https://soft-capybara-638585.netlify.app',
+   credentials: true
+ }));
+ 
+ 
+ app.set('trust proxy', 1);
+ 
+ app.use(express.json());
+ app.use(cookieParser());
+ 
+ app.use(session({
+   secret: "no_idea_what_this_does_lol_27$$", 
+   resave: false,            
+   saveUninitialized: false,  
+   cookie: {
+     secure: process.env.NODE_ENV === 'production',            
+     secure: true,            
+     sameSite: 'none',
+     httpOnly: true
+   }   
+ }));
 
 await mongoose.connect(`mongodb+srv://giancarlokite:${DB_PASSWORD}@mern-chronologger.iudfl.mongodb.net/?retryWrites=true&w=majority&appName=mern-chronologger`);
 
