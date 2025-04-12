@@ -13,8 +13,6 @@ export const addUser = async (req, res) => {
     }
   
     const newUser = await User.create({ username, password: await hash(plainPassword) });
-  
-    req.session.user = { username };
     
     return res.status(200).json(newUser);
 
