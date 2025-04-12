@@ -8,7 +8,7 @@ import cors from 'cors';
 import connectMongo from 'connect-mongo';
 import { default as connectMongoDBSession } from 'connect-mongodb-session';
 
-dotenv.config({ path: '../.env' });
+// dotenv.config({ path: '../.env' });
 const app = express();
 const PORT = process.env.PORT;
 const DB_PASSWORD = process.env.DB_PASSWORD;
@@ -20,6 +20,10 @@ app.use(cors({
 
 const MongoDBStore = connectMongoDBSession(session);
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+
 const store = new MongoDBStore({
   uri: `mongodb+srv://giancarlokite:${DB_PASSWORD}@mern-chronologger.iudfl.mongodb.net/?retryWrites=true&w=majority&appName=mern-chronologger`,
   collection: 'sessions',
@@ -27,13 +31,11 @@ const store = new MongoDBStore({
 
 app.set('trust proxy', 1);
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 app.use(session({
   secret: "no_idea_what_this_does_lol_27$$", 
   resave: false,            
-  saveUninitialized: false,  
+  saveUninitialized: true,  
   store: store
 }));
 
