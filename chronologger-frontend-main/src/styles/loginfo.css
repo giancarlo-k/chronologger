@@ -1,0 +1,240 @@
+:root {
+  --main-green: #40C057;
+}
+
+.loginfo-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  flex: 1;
+  overflow: auto;
+  animation: slideInFromBottom 0.7s;
+}
+
+.image-and-title-box {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  margin-left: 15px;
+}
+
+.loginfo-top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+.log-info-image {
+  width: 70px !important;
+  height: 70px ;
+  object-fit: cover;
+  border-radius: 10px;
+  /* box-shadow: #00000017 0px 3px 12px; */
+}
+
+.log-info-title {
+  font-size: 25px;
+}
+
+.completed-percent-box {
+  margin-left: 30px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  margin-top: 10px;
+}
+
+.outer-progress-bar {
+  background-color: transparent;
+  width: 160px;
+  height: 18px;
+  margin-top: 3px;
+  border-radius: 20px;
+  border: 1.5px solid #000000a2;
+  position: relative;
+}
+
+.inner-progress-bar {
+  background-color: var(--main-green);
+  max-width: 100%;
+  height: 18px;
+  border-radius: 10px;
+}
+
+/*
+  if the width is 96% or higher, make the border-right radiuses 10px ^^^^^
+*/
+
+.loginfo-middle-section {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  column-gap: 20px;
+}
+
+.total-completed-without-percent {
+  position: absolute;
+  font-size: 12px;
+  top: -22px;
+  opacity: 0.6;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.chart-container {
+  width: 580px;
+}
+
+.loginfo-bottom-section {
+  /* border: 2px solid red; */
+  margin-top: 60px;
+  margin-left: 28px;
+  display: flex;
+  column-gap: 70px;
+}
+
+.recent-logs-container {
+  /* border: 2px solid blue; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+}
+
+.recent-logs-container span {
+  font-size: 18px;
+}
+
+.recent-logs-divider {
+  width: 180px;
+  height: 2.5px;
+  border-radius: 2px;
+  background-color: black;
+}
+
+.recent-logs-list {
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  width: 200px;
+  align-items: center;
+  row-gap: 20px;
+  overflow-y: hidden;
+}
+
+.recent-log-line {
+  font-size: 14px;
+}
+
+.loginfo-buttons-box {
+  display: flex;
+  column-gap: 20px;
+}
+
+@media only screen and (max-width: 700px) {
+  .outer-progress-bar {
+    width: 270px;
+  }
+
+  .add-log-button {
+    font-size: 12px;
+    column-gap: 8px;
+    padding: 7px 5px;
+  }
+
+  .add-log-button img {
+    width: 17px;
+  }
+
+  .loginfo-buttons-box {
+    /* margin-left: 30px; */
+    margin-top: 5px;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+  }
+
+  .completed-percent-box {
+    margin-left: 0;
+  }
+
+  .loginfo-middle-section {
+    flex-direction: column;
+    row-gap: 20px;
+    margin-top: 20px;
+    /* border: 2px solid red; */
+    /* justify-content: flex-start;
+    align-items: flex-start; */
+  }
+
+  .loginfo-bottom-section {
+    flex-direction: column;
+    margin-bottom: 30px;
+    margin-left: 0px;
+    align-items: center;
+  }
+
+  .chart-container {
+    width: 350px;
+    /* border: 2px solid red; */
+    margin-left: 25px;
+    margin-top: -20px;
+  }
+
+  .recent-logs-container {
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 1070px) {
+  .chart-container {
+    width: 510px;
+  }
+
+  .loginfo-bottom-section {
+    column-gap: 50px;
+  }
+
+  .recent-logs-divider {
+    width: 150px;
+  }
+
+  .recent-logs-container span {
+    font-size: 16px;
+  }
+
+  .recent-log-line {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 970px) {
+  .chart-container {
+    width: 410px;
+  }
+
+  .loginfo-bottom-section {
+    column-gap: 20px;
+  }
+
+  .recent-logs-divider {
+    width: 140px;
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  .chart-container {
+    width: 350px;
+  }
+
+  .recent-logs-divider {
+    width: 130px;
+  }
+
+  .loginfo-bottom-section {
+    column-gap: 0px;
+  }
+}

@@ -1,0 +1,217 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Start off-screen to the left */
+  }
+  100% {
+    opacity: 1; /* Slide into place */
+  }
+}
+
+.log-form-page-overlay {
+  background-color: #2c2c2c90; /* Semi-transparent black */
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  animation: fadeIn 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.log-form-container {
+  background-color: #e9ecef;
+  height: 355px;
+  width: 350px;
+  border-radius: 20px;
+  display: flex;
+}
+
+.logtime-form-container {
+  background-color: #e9ecef;
+  height: 225px;
+  width: 350px;
+  border-radius: 20px;
+  display: flex;
+}
+
+.log-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  align-items: start;
+  padding-left: 30px;
+  justify-content: space-around;
+  height: 80%;
+  /* border: 2px solid red; */
+}
+
+#chosen-log-image {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  width: 50px !important;
+  height: 50px ;
+  object-fit: cover;
+  border-radius: 10px;
+
+}
+
+.input-box {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.input-span {
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+.title-input, .goal-input {
+  border-bottom: 1.5px solid black;
+  padding-bottom: 5px;
+}
+
+.title-input input, .goal-input input {
+  border: none;
+  background-color: transparent;
+  font-size: 14px;
+  outline: none;
+  caret-color: black;
+  padding: 0;
+}
+
+
+.goal-input-box {
+  position: relative;
+}
+
+.goal-div {
+  display: flex;
+  column-gap: 5px;
+  align-items: center;
+}
+
+#goal-divider {
+  width: 1.5px;
+  background-color: black;
+  height: 15px;
+  /* margin-top: -3px; */
+}
+
+#goal-span {
+  font-size: 10px;
+  font-style: italic;
+}
+
+.goal-input {
+  width: 45px;
+}
+
+.hours-span {
+  position: absolute;
+  bottom: 6px;
+  left: 50px;
+}
+
+.buttons-container button {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  color: white;
+  transition: 0.2s ease;
+}
+
+.buttons-container button:first-child {
+  background-color: #808080de;
+}
+
+.buttons-container button:first-child:hover {
+  background-color: #696969de;
+}
+
+.buttons-container button:last-child {
+  background-color: #40C057;
+}
+
+.buttons-container button:last-child:hover {
+  background-color: #37a331;
+}
+
+.buttons-container {
+  display: flex;
+  column-gap: 10px;
+}
+
+.title-input-box {
+  position: relative;
+}
+
+#logname-error {
+  position: absolute;
+  top: -11px;
+  left: 40px;
+  font-size: 12px;
+  color: red;
+  opacity: 0.7;
+}
+
+.logtime-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+}
+
+.time-input-container {
+  /* border: 2px solid blue; */
+  display: flex;
+  column-gap: 30px;
+  position: relative;
+}
+
+.time-input-section {
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid red; */
+  align-items: center;
+  row-gap: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.time-input-section span {
+  font-size: 16px;
+}
+
+.time-input-section input {
+  background-color: transparent;
+  outline: none;
+  border: 2px solid rgba(0, 0, 0, 0.329);
+  width: 70px;
+  height: 20px;
+  caret-color: black;
+  font-size: 14px;
+  padding-left: 2px;
+}
+
+.time-input-divider {
+  position: absolute;
+  left: 90px;
+  bottom: 13px;
+  font-size: 20px;
+}
+
+.hours-message {
+  position: absolute;
+  font-size: 12px;
+  opacity: 0.5;
+  bottom: -20px;
+  font-style: italic;
+}
