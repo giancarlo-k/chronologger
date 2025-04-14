@@ -36,7 +36,7 @@ const Sidebar = () => {
           </li>
 
           <li>
-            <a className="react-link link-box" href="https://github.com" target="_blank">
+            <a className="react-link link-box" href="https://github.com/giancarlo-k/chronologger" target="_blank">
               <img id="github-icon" src="/github.png"/>
               Repository
             </a>
