@@ -27,7 +27,7 @@ const MobileDirectory = () => {
           </li>
 
           <li>
-            <a className="mobile-links" href="https://github.com" target="_blank">Repository</a>
+            <a className="mobile-links" href="https://github.com/giancarlo-k/chronologger" target="_blank">Repository</a>
           </li>
 
           <li onClick={handleLogout}>
