@@ -1,4 +1,4 @@
-# <a href="https://soft-capybara-638585.netlify.app/">ChronoLogger</a>
+# <a href="https://chronologger-backend-0d366a44ea30.herokuapp.com">ChronoLogger</a>
 
 <h2>Tech Stack</h2>
 <div>
@@ -14,7 +14,6 @@
 
 <h2>Features</h2>
 
-<i>Note - Safari blocks 3rd Party Cookies by default. In order for the website to function, turn off the "Prevent cross-site tracking" preference in Safari -> Settings -> Privacy</i>
 
 
 <h2>Screenshots</h2>
