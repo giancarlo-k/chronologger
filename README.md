@@ -1,5 +1,10 @@
 # <a href="https://chronologger-backend-0d366a44ea30.herokuapp.com" target="_blank" >ChronoLogger</a>
 
+ChronoLogger is a time logging web application that tracks and visuzalies time spent towards a goal. 
+
+I created this to help me stay organized towards my goal of 10,000 hours on piano practice. 
+
+
 <h2>Tech Stack</h2>
 <div>
   <img src="https://img.shields.io/badge/MongoDB-13aa52?style=for-the-badge&logo=MongoDB&logoColor=white"> 
@@ -14,7 +19,11 @@
 
 <h2>Features</h2>
 
-
+ - Create time logs that track progress towards a set goal
+ - Full user authentication system, backed with Bcrypt hashing
+ - Visualize logged time with interactive charts, powered by Chart.js
+ - Editable log metadata, customizable at any time (goal, icon, etc.)
+ - Fully responsive design
 
 <h2>Screenshots</h2>
 
@@ -22,3 +31,7 @@
 
 <h2>Skills & Concepts Learned</h2>
 
+- Implementing React & JSX within a real project enviroment
+- Configured an AWS S3 bucket for storing and retrieving assets
+- <a href="https://www.chartjs.org">Chart.js</a>
+- Deploying a full-stack application via <a href="https://www.heroku.com">Heroku</a>
