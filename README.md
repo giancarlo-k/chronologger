@@ -1,4 +1,4 @@
-# <a href="https://chronologger-backend-0d366a44ea30.herokuapp.com">ChronoLogger</a>
+# <a href="https://chronologger-backend-0d366a44ea30.herokuapp.com" target="_blank" >ChronoLogger</a>
 
 <h2>Tech Stack</h2>
 <div>
